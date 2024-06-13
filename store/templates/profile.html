@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <h3>Update Profile info:</h3>
+        <hr>
+        <form method="post" class="col-8">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="firstname" class="mb-3 mt-3">First Name</label>
+                    <input type="firstname" class="form-control" id="firstname" name="firstname"
+                        aria-describedby="firstname" placeholder="Enter first name" value="{{ request.user.first_name }}">
+                </div>
+                <div class="form-group col-6">
+                    <label for="lastname" class="mb-3 mt-3">Last Name</label>
+                    <input type="lastman" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"
+                        placeholder="Enter last name" value="{{ request.user.last_name }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="mobile" class="mb-3 mt-3">Mobile</label>
+                    <input type="text" class="form-control" id="mobile" name="mobile" aria-describedby="mobile"
+                        placeholder="Enter Mobile Number" value="{{ request.user.user_profile.mobile }}">
+                </div>
+                <div class="form-group col-6">
+                    <label for="address" class="mb-3 mt-3">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" aria-describedby="address" placeholder="Enter Address" value="{{ request.user.user_profile.address }}">
+                </div>
+            </div>
+            <div class="form-group col-6">
+                <label for="email" class="mb-3 mt-3">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
+                    placeholder="Enter E-mail" value="{{ request.user.email }}">
+            </div>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-info mt-5">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

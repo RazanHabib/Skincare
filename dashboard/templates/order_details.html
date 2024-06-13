@@ -1,0 +1,56 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+{% if order_details %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Order Details</h1>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="p-3">
+        <h5>Date: {{ order_details.date }}</h5>
+        <h5>User: {{ order_details.user_id.first_name }} {{ order_details.user_id.last_name }}</h5>
+        <h5>Total: {{ order_details.total }}</h5>
+        <h5>Payment Method: {{ order_details.payment_method }}</h5>
+        <h5>E-mail: {{ order_details.user_id.email }}</h5>
+        <h5>Mobile: {{ user_prodile.mobile }}</h5>
+        <h5>Address: {{ order_details.governate }}</h5>
+        <h5>Address: {{ order_details.address }}</h5>
+    </div>
+    
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Orders Items</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>QTY</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% if order_items %}
+                    {% for item in order_items %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.product_id.title }}</td>
+                        <td>OMR {{ item.price }}</td>
+                        <td>{{ item.qty }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

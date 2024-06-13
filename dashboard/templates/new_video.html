@@ -1,0 +1,18 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">New Video</h1>
+</div>
+
+<form method="post" class="col-9" enctype="multipart/form-data">
+    {{ form.as_p }}
+    {% csrf_token %}
+    {% if login_error %}
+    <div id="emailHelp" class="form-text">Sorry something went wrong try again.</div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">New Category</h1>
+</div>
+
+<form method="post" class="col-9">
+    <div class="mb-3">
+      <label for="title"  class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+
+    {% csrf_token %}
+    {% if login_error %}
+    <div id="emailHelp" class="form-text">Sorry something went wrong try again.</div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+{% endblock %}

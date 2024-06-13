@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <h3 class="title mb-4 pb-3">Shopping Card</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <!-- <form method="post" id="checkout"> -->
+                    <p class="mb-3">Shipping Address:</p>
+                    <br>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="mb-3">Governate</label>
+                      <select class="form-control" name="governate" id="governate">
+                        <option value="Muscat">Muscat</option>
+                        <option value="Dhofar">Dhofar</option>
+                        <option value="Musandam">Musandam</option>
+                        <option value="Al Wusta">Al Wusta</option>
+                        <option value="Al Buraymi">Al Buraymi</option>
+                        <option value="Ad Dakhiliyah">Ad Dakhiliyah</option>
+                        <option value="Ad Dhahirah">Ad Dhahirah</option>
+                        <option value="Al Batinah North">Al Batinah North</option>
+                        <option value="Al Batinah South">Al Batinah South</option>
+                        <option value="Ash Sharqiyah North">Ash Sharqiyah North</option>
+                        <option value="Ash Sharqiyah South">Ash Sharqiyah South</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" class="mb-3 mt-3">Address</label>
+                      <textarea name="address" id="address" name="address" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" class="mb-3 mt-3">Payment Method</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment" id="bank" value="bank" checked />
+                        <label class="form-check-label" for="bank">
+                          Bank Transfer
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment" value="cash" id="cash" />
+                        <label class="form-check-label" for="cash">
+                          Cash on delivery
+                        </label>
+                      </div>
+                    </div>
+                    <div id="error" class="text-danger m-3"></div>
+                    {% csrf_token %}
+                    <button onclick="checkout()" class="btn btn-success mt-5">Checkout</button>
+                <!-- </form> -->
+            </div>
+            <div class="col-8">
+                <ul class="list-group col-12" id="items"></ul>
+                <br>
+                <div class="row col-12">
+                    <div class="col-10">
+                        <h4 class="pt-3 pb-3">Total: OMR <span id="total">0</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            {% if products %}
+            var products = [
+                {% for product in products %}
+            {
+                id: {{ product.id }},
+                price: {{ product.price }},
+                title: '{{product.title }}',
+                },
+            {% endfor %}
+            ]
+            {% endif %}
+
+            //products = JSON.parse(products)
+            document.addEventListener("DOMContentLoaded", function() {
+                loadCart()
+            })
+            
+        </script>
+    </div>
+</div>
+{% endblock %}

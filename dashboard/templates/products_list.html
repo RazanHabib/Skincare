@@ -1,0 +1,53 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    {% if products %}
+    <h1 class="h3 mb-0 text-gray-800">{{ category.title }} Products</h1>
+    {% else %}
+    <h1 class="h3 mb-0 text-gray-800">Products</h1>
+    {% endif %}
+    <a href="/dashboard/new-product" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-plus"></i> New</a>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Products List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if products %}
+                    {% for item in products %}
+                    <tr>
+                        <td>{{ item.date }}</td>
+                        <td><a href="/products/{{ item.id }}" target="_blank">{{ item.title }}</a></td>
+                        <td>OMR {{ item.price }}</td>
+                        <td>
+                            <form method="post" onsubmit="return deleteItem()">
+                                <input type="hidden" name="item_id" value="{{ item.id }}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}

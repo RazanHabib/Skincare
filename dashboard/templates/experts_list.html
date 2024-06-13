@@ -1,0 +1,47 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Experts</h1>
+    <a href="/dashboard/new-expert" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-plus"></i> New</a>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Experts List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Date.</th>
+                        <th>Title</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if experts %}
+                    {% for item in experts %}
+                    <tr>
+                        <td>{{ item.date }}</td>
+                        <td><a href="/dashboard/experts-list/{{ item.id }}">{{ item.name }}</a></td>
+                        <td>
+                            <form method="post" onsubmit="return deleteItem()">
+                                <input type="hidden" name="item_id" value="{{ item.id }}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}

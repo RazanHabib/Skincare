@@ -1,0 +1,90 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Orders Reports</h1>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Orders List</h6>
+    </div>
+    <form method="post" class="m-3">
+        <div class="mb-3 d-inline-block">
+          <label for="from"  class="form-label">From</label>
+          <input type="date" class="form-control" id="from" name="from" required>
+        </div>
+        <div class="mb-3 d-inline-block">
+          <label for="to"  class="form-label">To</label>
+          <input type="date" class="form-control" id="to" name="to" required>
+        </div>
+        {% csrf_token %}
+        {% if error %}
+        <div id="emailHelp" class="form-text">Sorry something went wrong try again.</div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Display</button>
+        <button class="btn btn-primary" onclick="handlePrint()">Print</button>
+    </form>
+    <div class="card-body" >
+        <div class="table-responsive" id="dataTable">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="text-left">Date</th>
+                        <th class="text-left">Total</th>
+                        <th class="text-left">Payment Method</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% if orders %}
+                    {% for item in orders %}
+                    <tr>
+                        <td><a href="/dashboard/orders-list/{{ item.id }}">{{ item.date }}</a></td>
+                        <td>{{ item.total }}</td>
+                        <td>{{ item.payment_method }}</td>
+                        <td><a href="/dashboard/orders-list/{{ item.id }}" class="btn btn-success"><i class="fa fa-eye"></i> View</a></td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                    <tr>
+                        <th class="text-left">
+                            Total
+                        </th>
+                        <th class="text-left">
+                            OMR {{ total }}
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var today = new Date();
+        var month = (today.getMonth() + 1) > 10?'0'+(today.getMonth() + 1):(today.getMonth() + 1);
+
+        document.getElementById("from").value = today.getFullYear() + '-' + month + '-' + '01';
+
+        function handlePrint() {
+
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+            mywindow.document.write('</head><body >');
+            mywindow.document.write('<h1>' + document.title  + '</h1>');
+            mywindow.document.write(document.getElementById('dataTable').innerHTML);
+            mywindow.document.write('</body></html>');
+
+            mywindow.document.close();
+            mywindow.focus();
+
+            mywindow.print();
+            mywindow.close();
+        }
+
+    </script>
+    {% endblock %}

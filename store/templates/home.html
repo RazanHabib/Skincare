@@ -1,0 +1,454 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s"
+                            data-wow-delay="1s">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h6>Beauty Shop</h6>
+                                    <h2>Beauty is in the eye of the beholder</h2>
+                                    <p>Welcome to Beauty Shop , where beauty meets elegance and luxury intertwines with
+                                        glamour. Step into a realm where every visit promises a rejuvenating experience,
+                                        tailored to enhance your natural allure. Our curated selection of premium
+                                        skincare, haircare, and cosmetic products awaits, promising to indulge your
+                                        senses and elevate your beauty routine to new heights. Discover a sanctuary
+                                        where expertise meets passion, and let us accompany you on a journey to unveil
+                                        your inner radiance. Embrace the beauty that lies within and embark on a
+                                        transformative voyage with us.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="border-first-button scroll-to-section">
+                                        <a href="#contact">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="{% static 'assets/images/btools3.webp' %}" class="rounded " alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="about section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="{% static 'assets/images/shop.webp' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s"
+                        data-wow-delay="0.5s">
+                        <div class="about-right-content">
+                            <div class="section-heading">
+                                <h6>About Us</h6>
+                                <h4>What is <em>Beauty Shop</em></h4>
+                                <div class="line-dec"></div>
+                            </div>
+                            <p>At Beauty Shop, we believe beauty is more than skin deep—it's a reflection of self-care,
+                                confidence, and individuality. Founded with a vision to redefine beauty standards, our
+                                boutique is a haven for those seeking not just products, but an experience that nurtures
+                                and empowers. With a commitment to excellence, we curate an exquisite selection of
+                                skincare, haircare, and cosmetics from around the world, each chosen for its quality,
+                                efficacy, and ethical sourcing. Our team of beauty enthusiasts and experts are dedicated
+                                to providing personalized guidance, ensuring every customer finds their perfect match.
+                                Whether you're a seasoned beauty aficionado or just beginning your journey, we invite
+                                you to discover the art of self-expression at Beauty Shop</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s"
+                                        data-wow-delay="0s">
+                                        <div class="progress" data-percentage="20">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value">
+                                                <div>
+                                                    20+<br>
+                                                    <span> Makeup</span>
+                                                    <br>
+                                                        <span>item</span>                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s"
+                                        data-wow-delay="0s">
+                                        <div class="progress" data-percentage="80">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value">
+                                                <div>
+                                                    8+<br>
+                                                    <span>Hair</span>
+                                                    <br>
+                                                        <span>item</span>                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s"
+                                        data-wow-delay="0s">
+                                        <div class="progress" data-percentage="80">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value">
+                                                <div>
+                                                    90+<br>
+                                                    <span>Skin Care</span>
+                                                    <br>
+                                                        <span>item</span>
+                                                    
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h6>Our Services</h6>
+                    <h4>What We <em>Provides</em></h4>
+                    <div class="line-dec"></div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="naccs">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="menu">
+                                    <div class="first-thumb active">
+                                        <div class="thumb">
+                                            <span class="icon"><img
+                                                    src="{% static 'assets/images/bot.png' %}"
+                                                    alt=""></span>
+                                            Beauty Chatbot
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
+                                            <span class="icon"><img
+                                                    src="{% static 'assets/images/scart.png' %}"
+                                                    alt=""></span>
+                                            Shopping
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
+                                            <span class="icon"><img
+                                                    src="{% static 'assets/images/brush.png' %}"
+                                                    alt=""></span>
+                                            Experts Advices
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <ul class="nacc">
+                                    <li class="active">
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Beauty Chatbot</h4>
+                                                            <p>Introducing our revolutionary beauty chatbot, designed to redefine your beauty experience, offering personalized beauty consultations and recommendations at your fingertips, empowering you to make informed decisions and discover the products that enhance your natural beauty effortlessly. Experience the future of beauty with our innovative chatbot today.
+                                                            </p>
+                                                            <button onclick="displayChatbot()" class="btn btn-info">Start chatting</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{% static 'assets/images/chatbot.png' %}"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Shopping</h4>
+                                                            <p>Step into the world of beauty enchantment with our meticulously curated beauty catalog, where every page tells a tale of elegance and transformation. From luxurious skincare essentials to captivating cosmetics, our catalog is a treasure trove of handpicked products that epitomize sophistication and quality.</p>
+                                                            <a href="/products" class="btn btn-info">Shop Now</a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{% static 'assets/images/cart_img.png' %}"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Beauty Experts</h4>
+                                                            <p>Our Beauty Experts Videos section, where beauty enthusiasts and professionals converge to share their expertise, tips, and tricks. Immerse yourself in a wealth of knowledge as our esteemed experts guide you through the latest trends, techniques, and product recommendations.</p>
+                                                            <a href="/experts" class="btn btn-info">Watch Now</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{% static 'assets/images/bbag.png' %}"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="portfolio" class="our-portfolio section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <h6>Our Products</h6>
+                    <h4>Recently added <em>Products</em></h4>
+                    <div class="line-dec"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="loop owl-carousel">
+                    {% if products %}
+                    {% for p in products %}
+                    <div class="item">
+                        <div class="portfolio-item" style="height: 500px">
+                            <div class="thumb">
+                                <img src="{{ MEDIA_URL }}media/{{ p.image }}" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>{{p.title}}</h4>
+                                <span>OMR {{p.price}}</span>
+                            </div>
+                            <div class="text-center fixed-bottom p-3">
+                                <button onclick="addToCart({id: '{{p.id}}', qty: 1, title: '{{p.title}}', price: '{{p.price}}' })" class="btn btn-dark m-2">Add to basket</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="experts" class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="section-heading">
+                    <h6>Recent Videos</h6>
+                    <h4>Check Our Experts <em>Advices</em></h4>
+                    <div class="line-dec"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 show-up2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                {% if firstVid %}
+                <div class="blog-post">
+                    <div class="thumb">
+                        <a href="watch/{{firstVid.id}}"><img src="{{ MEDIA_URL }}media/{{ firstVid.image }}" alt="" /></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">#{{firstVid.section}}</span>
+                        <span class="date">{{firstVid.date}}</span>
+                        <a href="watch/{{firstVid.id}}">
+                            <h4>{{firstVid.title}}</h4>
+                        </a>
+                        <p>{{firstVid.about}}</p>
+                        <span class="author"><img src="{{ MEDIA_URL }}media/{{ firstVid.expert_id.image }}" alt="" style="width: 100px;">By: {{firstVid.expert_id.name}}</span>
+                        <div class="border-first-button"><a href="watch/{{firstVid.id}}">Watch</a></div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="blog-posts">
+                    <div class="row">
+                        {% if videos %}
+                        {% for item in videos %}
+                        {% if not forloop.first %} 
+                        <div class="col-lg-12 mb-2">
+                            <div class="post-item">
+                                <div class="thumb">
+                                    <a href="watch/{{item.id}}"><img
+                                            src="{{ MEDIA_URL }}media/{{ item.image }}" alt=""
+                                            style="width: 200px;" /></a>
+                                </div>
+                                <div class="right-content">
+                                    <span class="category">#{{ item.section }}</span>
+                                    <span class="date">{{item.date}}</span>
+                                    <a href="watch/{{item.id}}">
+                                        <h4>{{item.title}}</h4>
+                                    </a>
+                                    <p>{{item.about}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% csrf_token %}
+<div id="contact" class="contact-us section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h6>Contact Us</h6>
+                    <h4>Get In Touch With Us <em>Now</em></h4>
+                    <div class="line-dec"></div>
+                </div>
+            </div>
+            <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <form id="contact" action="" method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="contact-dec">
+                                <img src="{% static 'assets/images/contact-dec.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div id="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14627.69274660437!2d58.38824983955077!3d23.571202100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff327b1f7805%3A0x3bd6e5d4ee9a798a!2sMall%20of%20Oman!5e0!3m2!1sen!2som!4v1710188893301!5m2!1sen!2som"
+                                    width="100%" height="636px" frameborder="0" style="border:0"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="fill-form">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="info-post">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/phone-icon.png' %}" alt="">
+                                                <a href="#">+968-96414880</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-post">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/email-icon.png' %}" alt="">
+                                                <a href="#">razanHabib@gmail.com</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-post">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/location-icon.png' %}" alt="">
+                                                <a href="#">Oman, Muscat</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <fieldset>
+                                            <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                                        </fieldset>
+                                        <fieldset>
+                                            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                                        </fieldset>
+                                        <fieldset>
+                                            <input type="subject" name="subject" id="subject" placeholder="Subject"autocomplete="on">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <fieldset>
+                                            <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        {% if send_error %}
+                                        <p>Something went wrong, try again later...</p>
+                                        {% endif %}
+                                        {% csrf_token %}
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="main-button ">Send</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

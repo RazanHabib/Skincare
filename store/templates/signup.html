@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <form method="post" class="col-8">
+            <h2 class="mb-3">Create a new account:</h2>
+            <div class="row">
+              <div class="form-group col-6">
+                <label for="firstname" class="mb-3 mt-3">First Name</label>
+                <input type="firstname" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="Enter first name">
+              </div>
+              <div class="form-group col-6">
+                <label for="lastname" class="mb-3 mt-3">Last Name</label>
+                <input type="lastman" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="Enter last name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-6">
+                <label for="username" class="mb-3 mt-3">Username</label>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Enter Username">
+              </div>
+              <div class="form-group col-6">
+                <label for="email" class="mb-3 mt-3">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter E-mail">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-6">
+                <label for="password" class="mb-3 mt-3">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              </div>
+              <div class="form-group col-6">
+                <label for="rpassword" class="mb-3 mt-3">Repeat Password</label>
+                <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="Repeat Password">
+              </div>
+            </div>
+            <div class="form-check mt-3 mb-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">I Aqree to beauty shop terms & conditions.</label>
+            </div>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

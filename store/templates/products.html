@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <div class="row">
+            {% if category %}
+            <h3>{{ category.title }}</h3>
+            {% else %}
+            <h3>Products</h3>
+            {% endif %}
+            <hr>
+            {% if products %}
+            {% for p in products %}
+            <div class="col-3 position-relative">
+                <div class="portfolio-item" style="height: 500px">
+                    <div class="thumb">
+                        <img src="{{ MEDIA_URL }}/media/{{ p.image }}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <h4>{{p.title}}</h4>
+                        <span>OMR {{p.price}}</span>
+                    </div>
+                    <div class="text-center absolute-bottom p-3">
+                        <button onclick="addToCart({id: '{{p.id}}', qty: 1, title: '{{p.title}}', price: '{{p.price}}' })"
+                            class="btn btn-dark m-2">Add to basket</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

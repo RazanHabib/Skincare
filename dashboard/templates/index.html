@@ -1,0 +1,52 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+</div>
+<h5>Welcome to Beauty Shop dashboard here you can manage orders and website content.</h5>
+<hr>
+<h3>
+    Latest Orders
+</h3>
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Payment Method</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if orders %}
+                    {% for item in orders %}
+                    <tr>
+                        <td><a href="/dashboard/orders-list/{{ item.id }}">{{ item.date }}</a></td>
+                        <td>{{ item.total }}</td>
+                        <td>{{ item.payment_method }}</td>
+                        <td><a href="/dashboard/orders-list/{{ item.id }}" class="btn btn-success"><i
+                                    class="fa fa-eye"></i> View</a></td>
+                        <td>
+                            <form method="post" onsubmit="return deleteItem()">
+                                <input type="hidden" name="item_id" value="{{ item.id }}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

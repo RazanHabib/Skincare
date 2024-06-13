@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        {% if recipe %}
+        <h3>{{ recipe.title }}</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <img src="{{ MEDIA_URL }}/media/{{ recipe.image }}" alt="" class="col-12" />
+            </div>
+            <div class="col-8">
+                {{ recipe.description }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

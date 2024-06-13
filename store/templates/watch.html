@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container text-center">
+        {% if video %}
+        <video width="720" class="rounded align-center" controls poster="{{ MEDIA_URL }}/media/{{ video.image }}">
+            <source src="{{ MEDIA_URL }}/media/{{ video.video }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h6>{{video.title}}</h6>
+        <p class="text-muted text-small">{{video.date}}</p>
+        <p>{{video.about}}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
